@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -14,7 +13,7 @@ public class MainPage {
 
     blogButton = $("a[href*='/blog']"),
 
-    loginButton = $("#login-button"),
+    loginButton = $(".item.link.d-none.d-md-block.justify-content-end"),
 
     contactsButton = $("a[href*='/contacts']");
 

@@ -21,7 +21,6 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("browserVersion", "121.0");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.remote = System.getProperty("wdhost");
-//        Configuration.holdBrowserOpen = true;
 
         SelenideLogger.addListener("allure", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();

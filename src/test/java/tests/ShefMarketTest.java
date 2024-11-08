@@ -6,10 +6,8 @@ import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.BlogPage;
-import pages.ContactsPage;
-import pages.HowItWorksPage;
-import pages.MainPage;
+import pages.*;
+import utils.RandomUtils;
 
 import static io.qameta.allure.Allure.step;
 
@@ -19,7 +17,16 @@ public class ShefMarketTest extends TestBase {
     HowItWorksPage howItWorksPage = new HowItWorksPage();
     BlogPage blogPage = new BlogPage();
     ContactsPage contactsPage = new ContactsPage();
+    LoginPage loginPage = new LoginPage();
+    MenuPage menuPage = new MenuPage();
 
+    RandomUtils randomUtils = new RandomUtils();
+
+    String phoneNumber = randomUtils.getRandomUserPhone();
+
+    /*
+    Кейс 1 - проверка наличия видео во вкладке "Как это работает"
+     */
 
     @Test
     @Owner("Maxim Shlemin")
@@ -40,7 +47,7 @@ public class ShefMarketTest extends TestBase {
 
     /*
     Кейс 2 - перейти во вкладку "Блок о вкусном", провалиться внутрь карточки "Новогоднее меню 2025"
-    и проверить правильность перехода
+    и проверить переход в меню.
      */
 
     @Test
@@ -67,6 +74,7 @@ public class ShefMarketTest extends TestBase {
     /*
     Кейс 3 - перейти во вкладку "Контакты" и проверить наличие электронных почт для связи
      */
+
     @Test
     @Owner("Maxim Shlemin")
     @Severity(SeverityLevel.BLOCKER)
@@ -90,6 +98,7 @@ public class ShefMarketTest extends TestBase {
             contactsPage.checkHrEmail();
         });
     }
+
     /*
     Кейс 4 - перейти по кнопке "Войти", выбрать способ авторизации по номеру телефона,
     ввести номер телефона и проверить, что кнопка стала активной
@@ -98,7 +107,7 @@ public class ShefMarketTest extends TestBase {
     @Test
     @Owner("Maxim Shlemin")
     @Severity(SeverityLevel.BLOCKER)
-    @DisplayName("Кнопка 'Войти' становится активной после ввода номера телефона")
+    @DisplayName("Кнопка 'Получить код' становится активной после ввода номера телефона")
     @Tag("shefmarket_auto")
     void buttonEnterMustBeActiveAfterSettingPhoneNumber() {
         step("Открыть страницу 'Войти'", () -> {
@@ -106,16 +115,16 @@ public class ShefMarketTest extends TestBase {
             mainPage.openLoginPage();
         });
 
-        step("Проверка наличия электронной почты service@chefmarket.ru", () -> {
-            contactsPage.checkServiceEmail();
+        step("Открытие формы для входа по номеру телефона", () -> {
+            loginPage.openPhoneLoginForm();
         });
 
-        step("Проверка наличия электронной почты info@chefmarket.ru", () -> {
-            contactsPage.checkInfoEmail();
+        step("Ввод телефона в форму логина", () -> {
+            loginPage.setUserPhone(phoneNumber);
         });
 
-        step("Проверка наличия электронной почты hr@chefmarket.ru", () -> {
-            contactsPage.checkHrEmail();
+        step("Проверка возможности отправки кода после ввода номера телефона", () -> {
+            loginPage.checkPhoneCodeButton();
         });
     }
 
@@ -124,7 +133,27 @@ public class ShefMarketTest extends TestBase {
     изначально пользователю
      */
 
+    @Test
+    @Owner("Maxim Shlemin")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Проверка шаблона списка блюд в меню Оригинальное в разделе 'Menu'")
+    @Tag("shefmarket_auto")
+    void menuOriginalShouldHaveTemplateDishes() {
+        step("Открыть страницу 'Меню'", () -> {
+            mainPage.openMainPage();
+            mainPage.openMenu();
+        });
 
+        step("Выбрать меню 'Оригинальное'", () -> {
+            if (!menuPage.checkSelectedMenu().equals("ОРИГИНАЛЬНОЕ")) {
+                System.out.println(menuPage.checkSelectedMenu());
+                menuPage.clickMenuChooser();
+                menuPage.selectOriginalMenu();
+            }
+        });
 
-
+        step("Проверка шаблонных блюд для выбранного меню 'Оригинальное'", () -> {
+            menuPage.checkDishesInOriginalMenu();
+        });
+    }
 }
