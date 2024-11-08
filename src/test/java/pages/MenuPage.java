@@ -33,8 +33,8 @@ public class MenuPage {
     }
 
     public void checkDishesInOriginalMenu() {
-        tigerSpaghetti.shouldHave(text("В КОРЗИНЕ"));
-        chickenMeatballs.shouldHave(text("В КОРЗИНЕ"));
-        risottoWithBacon.shouldHave(text("В КОРЗИНЕ"));
+        tigerSpaghetti.shouldHave(text("IN THE BASKET"));
+        chickenMeatballs.shouldHave(text("IN THE BASKET"));
+        risottoWithBacon.shouldHave(text("IN THE BASKET"));
     }
 }

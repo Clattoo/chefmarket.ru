@@ -145,7 +145,7 @@ public class ShefMarketTest extends TestBase {
         });
 
         step("Выбрать меню 'Оригинальное'", () -> {
-            if (!menuPage.checkSelectedMenu().equals("ОРИГИНАЛЬНОЕ")) {
+            if (!menuPage.checkSelectedMenu().equals("ORIGINAL")) {
                 System.out.println(menuPage.checkSelectedMenu());
                 menuPage.clickMenuChooser();
                 menuPage.selectOriginalMenu();
