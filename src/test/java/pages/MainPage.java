@@ -18,7 +18,7 @@ public class MainPage {
     contactsButton = $("a[href*='/contacts']");
 
     public MainPage openMainPage() {
-        open("https://chefmarket.ru");
+        open("/");
 
         return this;
     }

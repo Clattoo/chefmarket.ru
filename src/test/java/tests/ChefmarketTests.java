@@ -11,7 +11,7 @@ import utils.RandomUtils;
 
 import static io.qameta.allure.Allure.step;
 
-public class ShefMarketTest extends TestBase {
+public class ChefmarketTests extends TestBase {
 
     MainPage mainPage = new MainPage();
     HowItWorksPage howItWorksPage = new HowItWorksPage();
@@ -33,7 +33,7 @@ public class ShefMarketTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Во вкладке 'Как это работает' имеется видео")
     @Tag("shefmarket_auto")
-    void videoOnPageHowItWorksExists() {
+    void videoOnPageHowItWorksExistsTest() {
         step("Открыть страницу 'Как это работает'", () -> {
             mainPage.openMainPage();
             mainPage.openHowItWorks();
@@ -55,7 +55,7 @@ public class ShefMarketTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Пользователь может перейти в новогоднее меню 2025 в разделе 'Блог о вкусном'")
     @Tag("shefmarket_auto")
-    void newYear2025MenuOnBlogPageExists() {
+    void newYear2025MenuOnBlogPageExistsTest() {
         step("Открыть страницу 'Блог о вкусном'", () -> {
             mainPage.openMainPage();
             mainPage.openBlog();
@@ -80,7 +80,7 @@ public class ShefMarketTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка наличия электронных почт разных отделов в разделе 'Контакты'")
     @Tag("shefmarket_auto")
-    void checkEmailsOnContactsPage() {
+    void checkEmailsOnContactsPageTest() {
         step("Открыть страницу 'Контакты'", () -> {
             mainPage.openMainPage();
             mainPage.openContactsPage();
@@ -109,7 +109,7 @@ public class ShefMarketTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Кнопка 'Получить код' становится активной после ввода номера телефона")
     @Tag("shefmarket_auto")
-    void buttonEnterMustBeActiveAfterSettingPhoneNumber() {
+    void buttonEnterMustBeActiveAfterSettingPhoneNumberTest() {
         step("Открыть страницу 'Войти'", () -> {
             mainPage.openMainPage();
             mainPage.openLoginPage();
@@ -138,7 +138,7 @@ public class ShefMarketTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка шаблона списка блюд в меню Оригинальное в разделе 'Menu'")
     @Tag("shefmarket_auto")
-    void menuOriginalShouldHaveTemplateDishes() {
+    void menuOriginalShouldHaveTemplateDishesTest() {
         step("Открыть страницу 'Меню'", () -> {
             mainPage.openMainPage();
             mainPage.openMenu();
