@@ -1,16 +1,19 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.*;
 import utils.RandomUtils;
 
-import static io.qameta.allure.Allure.step;
 
+@Owner("Maxim Shlemin")
+@Severity(SeverityLevel.BLOCKER)
 public class ChefmarketTests extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -24,24 +27,20 @@ public class ChefmarketTests extends TestBase {
 
     String phoneNumber = randomUtils.getRandomUserPhone();
 
+
     /*
     Кейс 1 - проверка наличия видео во вкладке "Как это работает"
      */
 
     @Test
-    @Owner("Maxim Shlemin")
-    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Во вкладке 'Как это работает' имеется видео")
     @Tag("shefmarket_auto")
     void videoOnPageHowItWorksExistsTest() {
-        step("Открыть страницу 'Как это работает'", () -> {
-            mainPage.openMainPage();
-            mainPage.openHowItWorks();
-        });
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
-        step("Проверка наличия видео на странице", () -> {
-            howItWorksPage.checkVideoOnPage();
-        });
+        mainPage.openMainPage()
+                .openHowItWorks();
+        howItWorksPage.checkVideoOnPage();
     }
 
 
@@ -51,24 +50,14 @@ public class ChefmarketTests extends TestBase {
      */
 
     @Test
-    @Owner("Maxim Shlemin")
-    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Пользователь может перейти в новогоднее меню 2025 в разделе 'Блог о вкусном'")
     @Tag("shefmarket_auto")
     void newYear2025MenuOnBlogPageExistsTest() {
-        step("Открыть страницу 'Блог о вкусном'", () -> {
-            mainPage.openMainPage();
-            mainPage.openBlog();
-            blogPage.checkBlogHeader();
-        });
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
-        step("Перейти в карточку новогоднего меню 2025", () -> {
-            blogPage.clickNewYear2025MenuButton();
-        });
-
-        step("Проверить переход в карточку новогоднего меню 2025", () -> {
-            blogPage.checkNewYear2025MenuTitle();
-        });
+        mainPage.openMainPage()
+                .openBlog();
+        blogPage.checkBlogHeader();
     }
 
     /*
@@ -76,27 +65,17 @@ public class ChefmarketTests extends TestBase {
      */
 
     @Test
-    @Owner("Maxim Shlemin")
-    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка наличия электронных почт разных отделов в разделе 'Контакты'")
     @Tag("shefmarket_auto")
     void checkEmailsOnContactsPageTest() {
-        step("Открыть страницу 'Контакты'", () -> {
-            mainPage.openMainPage();
-            mainPage.openContactsPage();
-        });
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
-        step("Проверка наличия электронной почты service@chefmarket.ru", () -> {
-            contactsPage.checkServiceEmail();
-        });
+        mainPage.openMainPage()
+                .openContactsPage();
 
-        step("Проверка наличия электронной почты info@chefmarket.ru", () -> {
-            contactsPage.checkInfoEmail();
-        });
-
-        step("Проверка наличия электронной почты hr@chefmarket.ru", () -> {
-            contactsPage.checkHrEmail();
-        });
+        contactsPage.checkServiceEmail()
+        .checkInfoEmail()
+        .checkHrEmail();
     }
 
     /*
@@ -105,27 +84,16 @@ public class ChefmarketTests extends TestBase {
      */
 
     @Test
-    @Owner("Maxim Shlemin")
-    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Кнопка 'Получить код' становится активной после ввода номера телефона")
     @Tag("shefmarket_auto")
     void buttonEnterMustBeActiveAfterSettingPhoneNumberTest() {
-        step("Открыть страницу 'Войти'", () -> {
-            mainPage.openMainPage();
-            mainPage.openLoginPage();
-        });
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        mainPage.openMainPage()
+                .openLoginPage();
 
-        step("Открытие формы для входа по номеру телефона", () -> {
-            loginPage.openPhoneLoginForm();
-        });
-
-        step("Ввод телефона в форму логина", () -> {
-            loginPage.setUserPhone(phoneNumber);
-        });
-
-        step("Проверка возможности отправки кода после ввода номера телефона", () -> {
-            loginPage.checkPhoneCodeButton();
-        });
+        loginPage.openPhoneLoginForm()
+                .setUserPhone(phoneNumber)
+                .checkPhoneCodeButton();
     }
 
     /*
@@ -134,26 +102,20 @@ public class ChefmarketTests extends TestBase {
      */
 
     @Test
-    @Owner("Maxim Shlemin")
-    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка шаблона списка блюд в меню Оригинальное в разделе 'Menu'")
     @Tag("shefmarket_auto")
     void menuOriginalShouldHaveTemplateDishesTest() {
-        step("Открыть страницу 'Меню'", () -> {
-            mainPage.openMainPage();
-            mainPage.openMenu();
-        });
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
-        step("Выбрать меню 'Оригинальное'", () -> {
-            if (!menuPage.checkSelectedMenu().equals("ORIGINAL")) {
-                System.out.println(menuPage.checkSelectedMenu());
-                menuPage.clickMenuChooser();
-                menuPage.selectOriginalMenu();
-            }
-        });
+        mainPage.openMainPage()
+                .openMenu();
 
-        step("Проверка шаблонных блюд для выбранного меню 'Оригинальное'", () -> {
-            menuPage.checkDishesInOriginalMenu();
-        });
+        if (!menuPage.checkSelectedMenu().equals("ORIGINAL")) {
+            menuPage.clickMenuChooser()
+                    .selectOriginalMenu();
+        }
+
+        menuPage.checkDishesInOriginalMenu();
+
     }
 }

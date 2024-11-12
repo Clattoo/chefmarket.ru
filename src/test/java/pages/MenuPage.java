@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -19,22 +20,32 @@ public class MenuPage {
 
     risottoWithBacon = $("[id='cad7e7eb-ea08-46c2-bf84-ccc1be0157df'].dish-preview.shadow--sides.border-radius--main.selected");
 
-    public void clickMenuChooser() {
+    @Step("Нажатие на кнопку выбора меню")
+    public MenuPage clickMenuChooser() {
         menuChooser.click();
+
+        return this;
     }
 
-    public void selectOriginalMenu() {
+    @Step("Выбор меню 'Оригинальное'")
+    public MenuPage selectOriginalMenu() {
         originalMenu.click();
+
+        return this;
     }
 
+    @Step("Проверка, что выбралось меню 'Оригинальное'")
     public String checkSelectedMenu() {
         return selectedMenu.getText();
 
     }
 
-    public void checkDishesInOriginalMenu() {
+    @Step("Проверка шаблона выбранных блюд для меню 'Оригинальное'")
+    public MenuPage checkDishesInOriginalMenu() {
         tigerSpaghetti.shouldHave(text("In the basket"));
         chickenMeatballs.shouldHave(text("In the basket"));
         risottoWithBacon.shouldHave(text("In the basket"));
+
+        return this;
     }
 }

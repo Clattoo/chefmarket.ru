@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -13,13 +14,14 @@ public class LoginPage {
 
     phoneCodeButton = $(".button.button-220.button-apply");
 
-
+    @Step("Открытие формы 'Войти по номеру телефона'")
     public LoginPage openPhoneLoginForm() {
         loginPhoneFormButton.click();
 
         return this;
     }
 
+    @Step("Заполнение формы ввода телефона в строку ввода")
     public LoginPage setUserPhone(String value) {
         phoneInput.shouldBe(visible);
         phoneInput.setValue(value);
@@ -27,6 +29,7 @@ public class LoginPage {
         return this;
     }
 
+    @Step("Кнопка 'Получить код' становится активной после ввода номера телефона")
     public void checkPhoneCodeButton() {
         phoneCodeButton.shouldHave(exist);
     }
