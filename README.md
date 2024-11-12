@@ -284,29 +284,19 @@
 > </br>
 > </br>
 >
-> **Проверка меню на главной странице**</br>
+> **Проверка перехода в новогоднее меню 2025**</br>
 > 
-> | ![menu test](/media/gif/menu_test.gif) |
+> | ![menu test](/media/gif/NewYearMenu2025.gif) |
 > |-|
 > </br>
 >
-> **Проверка партнеров из города Москва**
+> **Проверка активации кнопки "Получить код" после ввода номера телефона в строку ввода**
 > 
-> | ![check partner test](/media/gif/check_partner_test.gif) |
+> | ![check partner test](/media/gif/ReceiveCode.gif) |
 > |-|
 > </br>
->
-> **Поиск партнера ЭМИТЭЛ**
-> 
-> | ![search test](/media/gif/search_test.gif) |
-> |-|
-
-</br>
-</br>
-
-
 ---
 
 </br>
 
-<a><p align="right">[`Petyukov Alexander © 2024`](https://github.com/SandroUnknown)</p></a>
+<a><p align="right">[`Shlemin Maxim © 2024`](https://github.com/Clattoo)</p></a>
