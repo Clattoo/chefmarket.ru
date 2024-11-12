@@ -13,11 +13,11 @@ public class MenuPage {
 
     selectedMenu = $(".btn.btn-primary-outline.btn-large"),
 
-    tigerSpaghetti = $("[id='ac701b4d-df9f-4100-8978-a13ccd77b2d6'].dish-preview.shadow--sides.border-radius--main.selected"),
+    tigerSpaghetti = $("[id='1f0eaca2-cb3c-404a-85f9-81af60309c2b'].dish-preview.shadow--sides.border-radius--main.selected"),
 
-    chickenMeatballs = $("[id='2c668235-24b5-4546-9d59-2be235ee03b3'].dish-preview.shadow--sides.border-radius--main.selected"),
+    chickenMeatballs = $("[id='75d531e5-075c-4e60-8113-d0352d7c5d87'].dish-preview.shadow--sides.border-radius--main.selected"),
 
-    risottoWithBacon = $("[id='fce7edac-b0fa-45fd-9bd5-1e414fdd557c'].dish-preview.shadow--sides.border-radius--main.selected");
+    risottoWithBacon = $("[id='cad7e7eb-ea08-46c2-bf84-ccc1be0157df'].dish-preview.shadow--sides.border-radius--main.selected");
 
     public void clickMenuChooser() {
         menuChooser.click();
