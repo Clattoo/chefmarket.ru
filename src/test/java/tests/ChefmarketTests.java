@@ -36,8 +36,6 @@ public class ChefmarketTests extends TestBase {
     @DisplayName("Во вкладке 'Как это работает' имеется видео")
     @Tag("shefmarket_auto")
     void videoOnPageHowItWorksExistsTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
         mainPage.openMainPage()
                 .openHowItWorks();
         howItWorksPage.checkVideoOnPage();
@@ -53,8 +51,6 @@ public class ChefmarketTests extends TestBase {
     @DisplayName("Пользователь может перейти в новогоднее меню 2025 в разделе 'Блог о вкусном'")
     @Tag("shefmarket_auto")
     void newYear2025MenuOnBlogPageExistsTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
         mainPage.openMainPage()
                 .openBlog();
         blogPage.checkBlogHeader();
@@ -68,14 +64,9 @@ public class ChefmarketTests extends TestBase {
     @DisplayName("Проверка наличия электронных почт разных отделов в разделе 'Контакты'")
     @Tag("shefmarket_auto")
     void checkEmailsOnContactsPageTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
         mainPage.openMainPage()
                 .openContactsPage();
-
-        contactsPage.checkServiceEmail()
-        .checkInfoEmail()
-        .checkHrEmail();
+        contactsPage.checkServiceEmail().checkInfoEmail().checkHrEmail();
     }
 
     /*
@@ -87,10 +78,8 @@ public class ChefmarketTests extends TestBase {
     @DisplayName("Кнопка 'Получить код' становится активной после ввода номера телефона")
     @Tag("shefmarket_auto")
     void buttonEnterMustBeActiveAfterSettingPhoneNumberTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         mainPage.openMainPage()
                 .openLoginPage();
-
         loginPage.openPhoneLoginForm()
                 .setUserPhone(phoneNumber)
                 .checkPhoneCodeButton();
@@ -105,11 +94,8 @@ public class ChefmarketTests extends TestBase {
     @DisplayName("Проверка шаблона списка блюд в меню Оригинальное в разделе 'Menu'")
     @Tag("shefmarket_auto")
     void menuOriginalShouldHaveTemplateDishesTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
         mainPage.openMainPage()
                 .openMenu();
-
         menuPage.checkDishesInOriginalMenu();
 
     }
