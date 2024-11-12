@@ -128,7 +128,7 @@
 > | Параметр          | Описание                                                     | Значение по умолчанию                |
 > | :---              | :---                                                         | :---                                 |
 > | `TASK`            | Имя задачи в Gradle</br> _(указывает какие тесты выполнить)_ | shefmarket_auto_task                 |
-> | `WDHOST`          | Удаленный сервер для выполнения тестов                       | https://login:password@selenoid.autotests.cloud/wd/hub               |
+> | `WDHOST`          | Удаленный сервер для выполнения тестов                       | selenoid.autotests.cloud               |
 > | `BROWSER`         | Браузер, в котором будут выполняться тесты                   | chrome                               |
 > | `BROWSER_VERSION` | Версия браузера, в которой будут выполняться тесты           | 121.0                                |
 > | `BROWSER_SIZE`    | Размер окна браузера, в котором будут выполняться тесты      | 1920x1080                            |
@@ -171,7 +171,7 @@
 ### Сборка в Jenkins
 
 > [!TIP]
-> Реализован запуск тестов с помощью [`Jenkins`](https://jenkins.autotests.cloud/job/clatto_ru_chefmarket/) (требуется авторизация).</br>
+> Реализован запуск тестов с помощью [`Jenkins`](https://jenkins.autotests.cloud/job/clatto_chefmarket_ru/) (требуется авторизация).</br>
 > </br>
 > Для запуска сборки необходимо: 
 > 1. Перейти в раздел `▷ Build with Parameters`
