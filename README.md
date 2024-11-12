@@ -1,8 +1,8 @@
 <a name="start"></a>
 # <p align="center">Демонстрационный проект по автоматизации</br>тестирования для компании [`«ШефМаркет»`](https://www.chefmarket.ru/)</p>
-<a href="https://flat-soft.ru/"><img src="media/logos/face.png" width="100%" alt="FLAT-SOFT"/></a>  
+<a href="https://www.chefmarket.ru"><img src="media/logos/face.png" width="100%" alt="SHEFMARKET"/></a>  
 
-> _<p align="justify"><sub><a href="https://flat-soft.ru/"><img src="media/logos/logo_flat.png" width="128" alt="FLAT-SOFT"/></a></sub></p>_
+> _<p align="justify"><sub><a href="https://www.chefmarket.ru"><img src="media/logos/logo_flat.png" width="128" alt="SHEFMARKET"/></a></sub></p>_
 > _<p align="justify"> &emsp;&emsp;&emsp;&emsp; — сервис доставки продуктов с рецептами №1 в России и СНГ. Компания основана в 2012 году и входит в глобальный список "Key players" в сегменте meal-kit.</p>_
 > 
 > _<p align="justify">Компанния разрабатывает рецепты, закупает продукты напрямую у производителей, производит ингредиенты, собирает заказы на собственном производстве и доставляет их непосредственно конечным покупателям - домохозяйствам в Москве, Санкт-Петербурге, Нижнем Новгороде, Туле, Твери, Владимире и Ярославле.</p>_
@@ -222,7 +222,7 @@
 ### Allure TestOps
 
 > [!TIP]
-> Выполнена интеграция сборки `Jenkins` с [`Allure TestOps`](https://allure.autotests.cloud/project/4485/dashboards) (требуется авторизация).
+> Выполнена интеграция сборки `Jenkins` с [`Allure TestOps`](https://allure.autotests.cloud/project/4490/dashboards) (требуется авторизация).
 > </br>
 > </br>
 >
@@ -233,16 +233,12 @@
 > |-|
 > </br>
 >
-> **Список авто тестов**
+> **Список тестов**
 > 
 > | ![allure testops auto tests](/media/screenshots/allure_testops_auto_tests.png) |
 > |-|
 > </br>
->
-> **Список ручных тестов**
-> 
-> | ![allure testops manual test](/media/screenshots/allure_testops_manual_test.png) |
-> |-|
+
 
 </br>
 
@@ -251,7 +247,7 @@
 ### Интеграция с Jira
 
 > [!TIP]
-> Выполнена интеграция `Allure TestOps` с [`Jira`](https://jira.autotests.cloud/browse/HOMEWORK-1364) (требуется авторизация).
+> Выполнена интеграция `Allure TestOps` с [`Jira`](https://jira.autotests.cloud/browse/HOMEWORK-1366) (требуется авторизация).
 > </br>
 > </br>
 >
