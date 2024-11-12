@@ -171,7 +171,7 @@
 ### Сборка в Jenkins
 
 > [!TIP]
-> Реализован запуск тестов с помощью [`Jenkins`](https://jenkins.autotests.cloud/job/clatto_ru_chefmarket/) (требуется авторизация).</br>
+> Реализован запуск тестов с помощью [`Jenkins`](https://jenkins.autotests.cloud/job/clatto_chefmarket_ru/) (требуется авторизация).</br>
 > </br>
 > Для запуска сборки необходимо: 
 > 1. Перейти в раздел `▷ Build with Parameters`
