@@ -33,15 +33,15 @@ public class ShefMarketTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Во вкладке 'Как это работает' имеется видео")
     @Tag("shefmarket_auto")
-    void videoOnPageHowItWorksExists()  {
-       step("Открыть страницу 'Как это работает'", () -> {
-           mainPage.openMainPage();
-           mainPage.openHowItWorks();
+    void videoOnPageHowItWorksExists() {
+        step("Открыть страницу 'Как это работает'", () -> {
+            mainPage.openMainPage();
+            mainPage.openHowItWorks();
         });
 
-       step("Проверка наличия видео на странице", () -> {
-           howItWorksPage.checkVideoOnPage();
-       });
+        step("Проверка наличия видео на странице", () -> {
+            howItWorksPage.checkVideoOnPage();
+        });
     }
 
 

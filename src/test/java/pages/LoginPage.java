@@ -14,7 +14,6 @@ public class LoginPage {
     phoneCodeButton = $(".button.button-220.button-apply");
 
 
-
     public LoginPage openPhoneLoginForm() {
         loginPhoneFormButton.click();
 
