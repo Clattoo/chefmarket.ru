@@ -110,11 +110,6 @@ public class ChefmarketTests extends TestBase {
         mainPage.openMainPage()
                 .openMenu();
 
-        if (!menuPage.checkSelectedMenu().equals("ORIGINAL")) {
-            menuPage.clickMenuChooser()
-                    .selectOriginalMenu();
-        }
-
         menuPage.checkDishesInOriginalMenu();
 
     }
